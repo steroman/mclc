@@ -1,17 +1,14 @@
-import { fileURLToPath, URL } from 'node:url'
+// vite.config.js
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import { fileURLToPath, URL } from 'node:url';
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-
-// https://vite.dev/config/
 export default defineConfig({
-  base: '/mclc/', // Replace 'my-vue-app' with your actual repository name
-  plugins: [
-    vue(),
-  ],
+  base: './', // Ensure this is correct
+  plugins: [vue()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
-})
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+});
